@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Cairo:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background-color: rgba(21, 21, 94, 0.871);
+        color: white;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        gap: 25px;
+        font-family: "Cairo", sans-serif;
+      }
+      main,
+      header,
+      footer {
+        width: 800px;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        flex: 1;
+      }
+      h1 {
+        font-family: "Bungee", cursive;
+        display: flex;
+        justify-content: space-between;
+      }
+      .icon-wraper:hover .plus-icon {
+        color: cyan;
+        cursor: pointer;
+        transition-duration: 500ms;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Todos
+        <span class="icon-wraper"
+          ><i class="fa-sharp fa-solid fa-plus plus-icon"></i
+        ></span>
+      </h1>
+    </header>
+    <main>main</main>
+    <footer>footer</footer>
+  </body>
+  <script>
+    const k = [1, 2, 5, 6, 7, 7, 8];
+    k.splice(1, 1);
+    console.log(k);
+  </script>
+</html>
