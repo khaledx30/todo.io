@@ -18,6 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <style>
       * {
         box-sizing: border-box;
@@ -33,7 +34,7 @@
         padding: 20px;
         flex-direction: column;
         gap: 25px;
-        /* font-family: "Cairo", sans-serif */
+        font-family: "Cairo", sans-serif;
       }
       main,
       header,
@@ -58,23 +59,33 @@
         cursor: pointer;
         transition-duration: 500ms;
       }
+      #section input {
+        background-color: transparent;
+        outline: none;
+        padding: 5px 9px;
+        color: white;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1>
+      <h1 class="heloo">
         Todos
         <span class="icon-wraper"
           ><i class="fa-sharp fa-solid fa-plus plus-icon"></i
         ></span>
       </h1>
     </header>
-    <main>main</main>
+    <main>
+      <section id="entertodo">
+        <form>
+          <input type="text" id="id-text" />
+          <button>Add</button>
+        </form>
+        Add todo
+      </section>
+    </main>
     <footer>footer</footer>
   </body>
-  <script>
-    const k = [1, 2, 5, 6, 7, 7, 8];
-    k.splice(1, 1);
-    console.log(k);
-  </script>
+  <script defer></script>
 </html>
