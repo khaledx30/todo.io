@@ -90,6 +90,24 @@
         color: black;
         background-color: skyblue;
       }
+      .todos {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .todoitem {
+        display: flex;
+        justify-content: space-between;
+      }
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        width: 55px;
+      }
+      .fa-pen,
+      .fa-trash-can {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -105,12 +123,67 @@
       <section id="entertodo">
         <form>
           <input type="text" id="id-text" placeholder="inter Todo" />
-          <button>Add</button>
+          <button class="btn">Add</button>
         </form>
-        Add todo
+      </section>
+      <section class="todos">
+        <!-- <div class="todoitem">
+          <p>khaled is here</p>
+          <div class="actions">
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-regular fa-trash-can"></i>
+          </div>
+        </div> -->
       </section>
     </main>
     <footer>footer</footer>
   </body>
-  <script></script>
+  <script>
+    let todo = ["khaled is "];
+    const slTodo = document.querySelector(".todos");
+    const todoitem = document.querySelector(".todoitem");
+    const btn = document.querySelector(".btn");
+    const selInput = document.querySelector("#id-text");
+    const textInput = document.querySelector(".text_input");
+    const renderTodo = function (arr, selctor) {
+      arr.forEach((el, i) => {
+        const html = `
+        <div class="todoitem">
+          <p  class ="text_input">${i + 1}.  ${el}</p>
+          <div class="actions">
+            <i class="fa-solid fa-pen"></i>
+            <i class="fa-regular fa-trash-can" onclick="removeTodo(${i})"></i>
+          </div>
+        </div>
+        `;
+        selctor.insertAdjacentHTML("beforeend", html);
+        selInput.value = "";
+      });
+    };
+    renderTodo(todo, slTodo);
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      let textVal = selInput.value;
+      if (!textVal) return;
+      todo.push(textVal);
+      slTodo.innerHTML = "";
+      renderTodo(todo, slTodo);
+    });
+
+    const removeTodo = function (index) {
+      todo = todo.filter((el, i) => {
+        return i == index ? false : true;
+      });
+      slTodo.innerHTML = "";
+      renderTodo(todo, slTodo);
+    };
+
+    textInput.addEventListener("click", (e) => {
+      console.log(textInput);
+      e.preventDefault();
+      let i = textInput.getAttribute("index");
+      console.log(i);
+    });
+  </script>
 </html>
