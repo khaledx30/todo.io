@@ -96,10 +96,13 @@
         gap: 5px;
       }
       .todoitem {
+        position: relative;
         display: flex;
         justify-content: space-between;
       }
       .actions {
+        position: absolute;
+        right: 0;
         display: flex;
         justify-content: space-between;
         width: 55px;
@@ -151,7 +154,7 @@
         <div class="todoitem">
           <p  class ="text_input">${i + 1}.  ${el}</p>
           <div class="actions">
-            <i class="fa-solid fa-pen"></i>
+            <i onclick="editeTodo(${i})" class="fa-solid fa-pen"></i>
             <i class="fa-regular fa-trash-can" onclick="removeTodo(${i})"></i>
           </div>
         </div>
@@ -179,11 +182,15 @@
       renderTodo(todo, slTodo);
     };
 
-    textInput.addEventListener("click", (e) => {
-      console.log(textInput);
-      e.preventDefault();
-      let i = textInput.getAttribute("index");
-      console.log(i);
-    });
+    const editeTodo = function (index) {
+      // const curentElement = document.querySelector(
+      //   `.todos div:nth-child(${index + 1}) p`
+      // );
+      const curentElement = slTodo.querySelector(`p`).textContent;
+      const splicText = curentElement.slice(3);
+      removeTodo(index);
+      selInput.value = splicText;
+      console.log(splicText);
+    };
   </script>
 </html>
