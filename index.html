@@ -59,11 +59,36 @@
         cursor: pointer;
         transition-duration: 500ms;
       }
-      #section input {
+      #entertodo form {
+        display: flex;
+        position: relative;
+        align-items: stretch;
+      }
+      #entertodo input {
         background-color: transparent;
         outline: none;
         padding: 5px 9px;
         color: white;
+        flex: 1;
+        border: 1px solid white;
+        padding: 15px;
+      }
+      button {
+        position: absolute;
+        right: 0;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 0px 25px;
+        font-size: 18px;
+        font-family: "Bungee";
+        transition: 0.5s;
+        background-color: transparent;
+        color: white;
+      }
+      button:hover {
+        color: black;
+        background-color: skyblue;
       }
     </style>
   </head>
@@ -79,7 +104,7 @@
     <main>
       <section id="entertodo">
         <form>
-          <input type="text" id="id-text" />
+          <input type="text" id="id-text" placeholder="inter Todo" />
           <button>Add</button>
         </form>
         Add todo
@@ -87,5 +112,5 @@
     </main>
     <footer>footer</footer>
   </body>
-  <script defer></script>
+  <script></script>
 </html>
